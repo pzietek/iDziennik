@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profil">
+
+    <TextView
+        android:id="@+id/textView_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <TextView
+        android:id="@+id/textView_profile_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView_profile_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_profile_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profile_name" />
+
+    <TextView
+        android:id="@+id/textView_profile_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="@string/profile_login"
+        app:layout_constraintStart_toStartOf="@+id/textView_profile_lastName"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profile_lastName" />
+
+    <TextView
+        android:id="@+id/textView_profile_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/profile_password"
+        app:layout_constraintStart_toStartOf="@+id/textView_profile_login"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profile_login" />
+
+    <TextView
+        android:id="@+id/textView_profile_loginValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_profile_login"
+        app:layout_constraintTop_toTopOf="@+id/textView_profile_login" />
+
+    <TextView
+        android:id="@+id/textView_profile_passwordValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView_profile_loginValue"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_profile_loginValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView_profile_loginValue" />
+
+    <Button
+        android:id="@+id/button_profile_changeLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/button_change_login"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_profile_loginValue"
+        app:layout_constraintStart_toEndOf="@+id/textView_profile_loginValue"
+        app:layout_constraintTop_toTopOf="@+id/textView_profile_loginValue"
+        app:layout_constraintVertical_bias="0.448" />
+
+    <Button
+        android:id="@+id/button_profile_changePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_change_password"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_profile_passwordValue"
+        app:layout_constraintEnd_toEndOf="@+id/button_profile_changeLogin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_profile_changeLogin"
+        app:layout_constraintTop_toTopOf="@+id/textView_profile_passwordValue"
+        app:layout_constraintVertical_bias="0.413" />
+</android.support.constraint.ConstraintLayout>
