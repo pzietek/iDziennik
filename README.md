@@ -1,7 +1,7 @@
 # iDziennik
 Logowac sie na konta:
-  -login: student
-  -haslo: student
+  - login: student
+  - haslo: student
  oraz
-  -login: teacher
-  -haslo: teacher
+  - login: teacher
+  - haslo: teacher
