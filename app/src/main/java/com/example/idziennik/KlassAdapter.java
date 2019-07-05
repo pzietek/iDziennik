@@ -53,9 +53,8 @@ public class KlassAdapter extends RecyclerView.Adapter<KlassAdapter.KlassViewHol
         @Override
         public void onClick(View view) {
             Klass klass = klassList.get(getAdapterPosition());
-            //Toast.makeText(mCtx, subject.getName(), Toast.LENGTH_SHORT).show();
+            CurrentKlass currentKlass = new CurrentKlass(klass);
             Intent intent = new Intent(mCtx, AllUsersList.class);
-
 
             mCtx.startActivity(intent);
         }

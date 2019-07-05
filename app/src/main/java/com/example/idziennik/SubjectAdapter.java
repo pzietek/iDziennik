@@ -54,10 +54,20 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         public void onClick(View view) {
             Subject subject = subjectList.get(getAdapterPosition());
             //Toast.makeText(mCtx, subject.getName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(mCtx, KlassesList.class);
-            intent.putExtra("subject", subject);
+            if (CurrentUser.value.getTyp() == 's') {
+                CurrentSubject currentSubject = new CurrentSubject(subject);
+                Intent intent = new Intent(mCtx, StudentGrade.class);
+                intent.putExtra("subject", subject);
 
-            mCtx.startActivity(intent);
+                mCtx.startActivity(intent);
+            } else {
+                CurrentSubject currentSubject = new CurrentSubject(subject);
+                Intent intent = new Intent(mCtx, KlassesList.class);
+                intent.putExtra("subject", subject);
+
+                mCtx.startActivity(intent);
+            }
+
         }
     }
 }

@@ -70,6 +70,8 @@ public abstract class AppDatabase extends RoomDatabase {
             userDao.insert(user);
             user = new User(0, "Adam", "Sadownik", "student3", "dfghjkuytr", 's');
             userDao.insert(user);
+            user = new User(0, "Hans", "Klos", "teacher", "teacher", 't');
+            userDao.insert(user);
 
             Subject subject = new Subject(0, "Polski");
             subjectDao.insert(subject);

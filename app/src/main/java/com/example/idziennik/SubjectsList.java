@@ -21,6 +21,7 @@ public class SubjectsList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects_list);
+        setTitle(getResources().getText(R.string.choose_subject_tittle));
 
         recyclerView = findViewById(R.id.recyclerview_subjects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

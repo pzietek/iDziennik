@@ -52,8 +52,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHol
         @Override
         public void onClick(View view) {
             User user = userList.get(getAdapterPosition());
-            Intent intent = new Intent(mCtx, StudentGrade.class);
-            intent.putExtra("user", user);
+            CurrentStudent currentStudent = new CurrentStudent(user);
+            Intent intent = new Intent(mCtx, StudentGradeForTeacher.class);
 
             mCtx.startActivity(intent);
         }

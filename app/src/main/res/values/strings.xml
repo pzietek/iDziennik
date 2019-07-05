@@ -14,4 +14,10 @@
     <string name="profile_password">Password</string>
     <string name="button_change_login">Zmień login</string>
     <string name="button_change_password">Zmień hasło</string>
+    <string name="my_grades">Moje oceny</string>
+    <string name="choose_subject_tittle">Wybierz przedmiot</string>
+    <string name="choose_klass_tittle">Wybierz klasę</string>
+    <string name="choose_student_tittle">Wybierz studenta</string>
+    <string name="button_add_grade">Dodaj ocenę</string>
+    <string name="add_grades">Wstaw ocenę</string>
 </resources>

@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.idziennik.db.AppDatabase;
-import com.example.idziennik.db.Subject;
 import com.example.idziennik.db.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,9 +59,13 @@ public class MainActivity extends AppCompatActivity {
                 super.onPostExecute(u);
                 if (u != null && passGiven.equals(u.getHaslo())) {
                     CurrentUser currentUser = new CurrentUser(u);
-                    Intent i = new Intent(getApplicationContext(), Menu.class);
-                    i.putExtra("user", u);
-                    startActivity(i);
+                    if(u.getTyp() == 's') {
+                        Intent i = new Intent(getApplicationContext(), MenuStudent.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), MenuTeacher.class);
+                        startActivity(i);
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "ZLY LOGIN LUB HASLO", Toast.LENGTH_SHORT).show();
                 }

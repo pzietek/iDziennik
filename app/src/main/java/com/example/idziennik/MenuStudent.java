@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import com.example.idziennik.db.User;
 
-public class Menu extends AppCompatActivity {
-    private Button buttonChooseSubject;
+public class MenuStudent extends AppCompatActivity {
+    private Button buttonGrades;
     private Button buttonProfil;
     private User user;
 
@@ -18,14 +18,13 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        //Bundle b = getIntent().getExtras();
-        //user = (User) b.getSerializable("user");
+
         user = CurrentUser.value;
 
-        buttonChooseSubject = findViewById(R.id.button_choose_subject);
+        buttonGrades = findViewById(R.id.button_my_grades);
         buttonProfil = findViewById(R.id.button_profil);
 
-        buttonChooseSubject.setOnClickListener(new View.OnClickListener() {
+        buttonGrades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SubjectsList.class);

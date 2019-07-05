@@ -22,6 +22,7 @@ public class KlassesList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_klasses_list);
+        setTitle(getResources().getText(R.string.choose_klass_tittle));
 
         Bundle b = getIntent().getExtras();
         Subject currentSubject = (Subject) b.getSerializable("subject");

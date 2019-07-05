@@ -19,6 +19,7 @@ public class AllUsersList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_users_list);
+        setTitle(getResources().getText(R.string.choose_student_tittle));
 
         recyclerView = findViewById(R.id.recyclerview_users);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

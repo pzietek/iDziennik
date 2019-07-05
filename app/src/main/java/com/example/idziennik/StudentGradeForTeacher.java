@@ -1,39 +1,52 @@
 package com.example.idziennik;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.idziennik.db.AppDatabase;
 import com.example.idziennik.db.Grade;
 import com.example.idziennik.db.Subject;
-import com.example.idziennik.db.User;
 
 import java.util.List;
 
-public class StudentGrade extends AppCompatActivity {
+public class StudentGradeForTeacher extends AppCompatActivity {
     private TextView name;
     private TextView lastName;
     private RecyclerView recyclerView_exams;
     private RecyclerView recyclerView_tests;
     private RecyclerView recyclerView_verbals;
+    private Button buttonAddGrade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_grade);
-
+        setContentView(R.layout.activity_student_grade_for_teacher);
 
         setTitle(CurrentSubject.value.getName());
 
+
+        buttonAddGrade = findViewById(R.id.button_add_grade);
+        buttonAddGrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EditGrade.class);
+
+                startActivity(intent);
+            }
+        });
+
         name = findViewById(R.id.textViewValue);
         lastName = findViewById(R.id.textViewLastName);
-        name.setText(CurrentUser.value.getImie());
-        lastName.setText(CurrentUser.value.getNazwisko());
+        name.setText(CurrentStudent.value.getImie());
+        lastName.setText(CurrentStudent.value.getNazwisko());
 
         recyclerView_exams = findViewById(R.id.recyclerView_exams);
         recyclerView_exams.setLayoutManager(new LinearLayoutManager(this));
@@ -70,7 +83,7 @@ public class StudentGrade extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Grade> grades) {
                 super.onPostExecute(grades);
-                ExamAdapter adapter = new ExamAdapter(StudentGrade.this, grades);
+                ExamAdapter adapter = new ExamAdapter(StudentGradeForTeacher.this, grades);
                 recyclerView_exams.setAdapter(adapter);
             }
         }
@@ -95,7 +108,7 @@ public class StudentGrade extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Grade> grades) {
                 super.onPostExecute(grades);
-                TestAdapter adapter = new TestAdapter(StudentGrade.this, grades);
+                TestAdapter adapter = new TestAdapter(StudentGradeForTeacher.this, grades);
                 recyclerView_tests.setAdapter(adapter);
             }
         }
@@ -120,7 +133,7 @@ public class StudentGrade extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Grade> grades) {
                 super.onPostExecute(grades);
-                TestAdapter adapter = new TestAdapter(StudentGrade.this, grades);
+                TestAdapter adapter = new TestAdapter(StudentGradeForTeacher.this, grades);
                 recyclerView_verbals.setAdapter(adapter);
             }
         }
